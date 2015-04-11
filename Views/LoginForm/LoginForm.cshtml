@@ -1,0 +1,60 @@
+﻿@model Final_Project.Models.User
+
+
+<!DOCTYPE html>
+<html>
+	
+<head>
+    <style>
+        .p1{
+            padding-top:0px;
+        }
+    </style>
+<title>Trendy Login Forms in Flat Design :: w3layouts</title>
+<link href="~/Content/style1.css" rel='stylesheet' type='text/css' />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+	
+ <!--start-main-->
+    <p class="p1">.</p>
+ 	<div class="login-05">
+		<div class="fifth-login">
+			
+			@*<form class="five">
+				<li>
+					<input type="text" class="text" value="EMAIL" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'EMAIL';}" ><a href="#" class=" icon5 user2"></a>
+				</li>
+				<li class="blue">
+					<input type="password" value="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}"><a href="#" class=" icon5 lock2"></a>
+				</li>
+				<div class="submit-five">
+					<input type="submit" onclick="myFunction()" value="LOG IN" > 
+				</div>
+			</form>*@
+
+             @using (Html.BeginForm("loginconfirm","Account",FormMethod.Post ))
+                              {
+                   @Html.ValidationSummary(true,"Login faild ,check your login details")
+                                            {
+ 
+                 
+                 <h2>Username</h2>
+                                  @Html.EditorFor(model =>model.UserName,new { @class = "text"})
+                 <h2>Password</h2>                    
+                  @Html.EditorFor(model =>model.Password,new { @class = "password",onblur="if (this.value == '') {this.value = 'PASSWORD';"})
+                 <div class="submit-five">
+					<input type="submit" value="LOG IN" > 
+				</div>
+             }
+             }
+		</div>
+	</div>
+	</p>
+	<!--//End-login-form-->
+	<!--start-copyright-->
+   		
+	<!--//end-copyright-->
+		 		
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿
+
+@{
+    ViewBag.Title = "UploadData";
+}
+
+<form action="/UploadData/Upload" method="post" enctype="multipart/form-data">
+  
+ <input type="file" name="movie" />
+     <input type="submit" value="Upload" />
+    </form>
+
+@foreach (var i in Model)
+{
+     <img src="@i.Movie" height="300" width="275" alt="" />
+}
